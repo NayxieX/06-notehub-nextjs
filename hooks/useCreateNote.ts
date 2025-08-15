@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createNote } from "@/api/api";
+import { createNote } from "@/lib/api/api";
 
 export const useCreateNote = (onSuccess?: () => void) => {
   const queryClient = useQueryClient();

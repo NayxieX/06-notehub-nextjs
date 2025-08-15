@@ -7,13 +7,13 @@ import {
   keepPreviousData,
 } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
-import { fetchNotes } from "@/api/api";
+import { fetchNotes } from "@/lib/api/api";
 
-import NoteList from "@/app/components/NoteList/NoteList";
-import Pagination from "@/app/components/Pagination/Pagination";
-import SearchBox from "@/app/components/SearchBox/SearchBox";
-import Modal from "@/app/components/Modal/Modal";
-import NoteForm from "@/app/components/NoteForm/NoteForm";
+import NoteList from "@/components/NoteList/NoteList";
+import Pagination from "@/components/Pagination/Pagination";
+import SearchBox from "@/components/SearchBox/SearchBox";
+import Modal from "@/components/Modal/Modal";
+import NoteForm from "@/components/NoteForm/NoteForm";
 import { Note } from "@/types/types";
 import css from "./NotePage.module.css";
 

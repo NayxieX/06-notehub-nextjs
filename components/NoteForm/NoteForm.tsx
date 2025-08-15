@@ -1,8 +1,8 @@
 import { Formik, Form, Field, ErrorMessage as FormikError } from "formik";
 import * as Yup from "yup";
 import css from "./NoteForm.module.css";
-import type { NoteTag } from "../../../types/types";
-import { useCreateNote } from "../../../hooks/useCreateNote";
+import type { NoteTag } from "../../types/types";
+import { useCreateNote } from "../../hooks/useCreateNote";
 
 interface FormValues {
   title: string;
@@ -12,7 +12,7 @@ interface FormValues {
 
 interface NoteFormProps {
   onCancel: () => void;
-  onSubmit?: () => void; 
+  onSubmit?: () => void;
 }
 
 const initialValues: FormValues = {
