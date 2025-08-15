@@ -10,11 +10,11 @@ interface NoteListProps {
 
 const NoteList = ({ notes }: NoteListProps) => {
   const queryClient = useQueryClient();
-  const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const mutation = useMutation({
     mutationFn: deleteNote,
-    onMutate: (id: number) => {
+    onMutate: (id: string) => {
       setDeletingId(id);
     },
     onSettled: () => {

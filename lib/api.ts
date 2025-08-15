@@ -62,7 +62,7 @@ export const createNote = async (note: CreateNoteDto): Promise<Note> => {
   return data;
 };
 
-export const deleteNote = async (id: string | number): Promise<Note> => {
+export const deleteNote = async (id: string): Promise<Note> => {
   const { data } = await api.delete<Note>(`/${id}`, {
     headers: getAuthHeader(),
   });
