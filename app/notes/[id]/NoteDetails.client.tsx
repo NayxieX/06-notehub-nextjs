@@ -2,8 +2,8 @@
 
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { fetchNoteById } from "@/lib/api/api";
-import { Note } from "@/types/types";
+import { fetchNoteById } from "@/lib/api";
+import { Note } from "@/types/note";
 import css from "./NoteDetails.module.css";
 
 interface NoteDetailsClientProps {
