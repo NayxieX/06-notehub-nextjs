@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import css from "./NoteList.module.css";
 import type { Note } from "@/types/note";
@@ -27,18 +28,23 @@ const NoteList = ({ notes }: NoteListProps) => {
     <ul className={css.list}>
       {notes.map((note) => (
         <li key={note.id} className={css.listItem}>
-          <h2 className={css.title}>{note.title}</h2>
-          <p className={css.content}>{note.content}</p>
-          <div className={css.footer}>
-            <span className={css.tag}>{note.tag}</span>
-            <button
-              className={css.button}
-              onClick={() => mutation.mutate(note.id)}
-              disabled={deletingId === note.id}
-            >
-              {deletingId === note.id ? "Deleting..." : "Delete"}
-            </button>
-          </div>
+          {/* Клікабельна вся картка */}
+          <Link href={`/notes/${note.id}`} className={css.cardLink}>
+            <h2 className={css.title}>{note.title}</h2>
+            <p className={css.content}>{note.content}</p>
+            <div className={css.footer}>
+              <span className={css.tag}>{note.tag}</span>
+            </div>
+          </Link>
+
+          {/* Кнопка видалення — поза посиланням */}
+          <button
+            className={css.button}
+            onClick={() => mutation.mutate(note.id)}
+            disabled={deletingId === note.id}
+          >
+            {deletingId === note.id ? "Deleting..." : "Delete"}
+          </button>
         </li>
       ))}
     </ul>
